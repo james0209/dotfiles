@@ -16,4 +16,3 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 
 sudo apt install python3-pip
 sudo apt install direnv
-sudo pip install virtualenvwrapper

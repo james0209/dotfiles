@@ -26,3 +26,10 @@ zshrc config already includes:
 ```bash
 plugins=(zsh-autosuggestions)
 ```
+
+## Packages
+
+- bauh
+- qemu
+- timeshift
+- ulauncher

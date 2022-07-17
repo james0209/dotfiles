@@ -41,3 +41,7 @@ plugins=(zsh-autosuggestions)
 - [Gnome Fuzzy Search](https://gitlab.com/Czarlie/gnome-fuzzy-app-search)
 - [Nordic Theme](https://www.gnome-look.org/p/1267246/)
 - [Workspace Indicator](https://extensions.gnome.org/extension/3968/improved-workspace-indicator/)
+
+## Dev Containers
+- [Golang](https://github.com/qdm12/godevcontainer)
+- [Latex](https://github.com/qdm12/latexdevcontainer)

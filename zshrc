@@ -121,4 +121,4 @@ eval "$(direnv hook zsh)"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 alias bat="batcat"
- 
+alias exa="exa -abghHliS"

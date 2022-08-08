@@ -1,0 +1,6 @@
+---
+- name: Setup Endeavouros
+  hosts: local
+
+  roles:
+    - jamesbrookes.dotfiles.zsh

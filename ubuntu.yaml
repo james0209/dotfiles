@@ -1,0 +1,7 @@
+---
+- name: Setup Ubuntu (WSL2)
+  hosts: local
+
+  roles:
+    - geerlingguy.docker
+    - jamesbrookes.dotfiles.zsh

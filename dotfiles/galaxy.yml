@@ -1,0 +1,14 @@
+namespace: jamesbrookes
+name: dotfiles
+description: Personal config
+
+version: 1.0.0
+readme: README.md
+
+authors:
+- James Brookes <jpebrookes@gmail.com>
+
+license:
+- MIT
+
+repository: https://github.com/james0209/dotfiles

@@ -1,0 +1,20 @@
+---
+- name: Ensure Zsh is installed
+  become: true
+  ansible.builtin.package:
+    name: zsh
+    state: present
+
+- name: Ensure configuration is present
+  ansible.builtin.template:
+    src: zshrc.j2
+    dest: "{{ ansible_user_dir }}/.zshrc"
+    mode: "u=rw,g=,o="
+    block_start_string: "{!"
+    block_end_string: "!}"
+
+- name: Ensure Zsh is set as the user's logon shell
+  become: true
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}"
+    shell: /bin/zsh

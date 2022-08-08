@@ -11,10 +11,10 @@
   register: stat_oh_my_zsh_result
 
 - name: Cloning oh-my-zsh
-  ansible.builtin.git:
+  ansible.builtin.git: # noqa git-latest
     repo: https://github.com/ohmyzsh/ohmyzsh.git
     dest: "{{ ansible_env.HOME }}/.oh-my-zsh"
-    update: no
+    update: false
   when: not stat_oh_my_zsh_result.stat.exists
 
 - name: Ensure configuration is present

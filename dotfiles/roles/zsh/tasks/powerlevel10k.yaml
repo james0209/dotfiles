@@ -17,14 +17,15 @@
   ansible.builtin.file:
     path: "{{ ansible_env.HOME }}/.fonts"
     state: directory
+    mode: '0555'
 
 - name: ZSH - Copy fonts for powerlevel10k zsh theme
   ansible.builtin.copy:
     src: "{{ item }}"
     dest: "{{ ansible_env.HOME }}/.fonts/{{ item }}"
+    mode: '0444'
   loop:
     - MesloLGS-NF-Bold-Italic.ttf
     - MesloLGS-NF-Bold.ttf
     - MesloLGS-NF-Italic.ttf
     - MesloLGS-NF-Regular.ttf
-      

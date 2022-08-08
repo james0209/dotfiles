@@ -25,12 +25,12 @@
 
 # Plugins
 - name: ZSH - Install zsh syntax highlighting
-  ansible.builtin.git:
+  ansible.builtin.git: # noqa git-latest
     repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
     dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
     depth: 1
 - name: ZSH - Install zsh zsh-autosuggestions
-  ansible.builtin.git:
+  ansible.builtin.git: # noqa git-latest
     repo: https://github.com/zsh-users/zsh-autosuggestions.git
     dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
     depth: 1

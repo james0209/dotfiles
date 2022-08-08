@@ -1,0 +1,30 @@
+# Install powerlevel10k theme
+- name: ZSH - Check if powerlevel10k exists
+  ansible.builtin.stat:
+    path: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/themes/powerlevel10k"
+  register: stat_powerlevel10k_result
+
+- name: ZSH - Ensure powerlevel10k exists
+  ansible.builtin.git: # noqa git-latest
+    repo: https://github.com/romkatv/powerlevel10k.git
+    dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/themes/powerlevel10k"
+    depth: 1
+    update: false
+  when: not stat_powerlevel10k_result.stat.exists
+
+# Fonts
+- name: ZSH - Create ~/.fonts directory
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/.fonts"
+    state: directory
+
+- name: ZSH - Copy fonts for powerlevel10k zsh theme
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.fonts/{{ item }}"
+  loop:
+    - MesloLGS-NF-Bold-Italic.ttf
+    - MesloLGS-NF-Bold.ttf
+    - MesloLGS-NF-Italic.ttf
+    - MesloLGS-NF-Regular.ttf
+      

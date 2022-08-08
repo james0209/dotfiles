@@ -2,5 +2,11 @@
 - name: Setup Endeavouros
   hosts: local
 
+  vars:
+    package_updates_reboot: true
+
   roles:
+    - dannixon.system.package_updates
+    - geerlingguy.docker
+    - jamesbrookes.dotfiles.k8s_tools
     - jamesbrookes.dotfiles.zsh

@@ -1,0 +1,10 @@
+---
+galaxy_info:
+  author: jamesbrookes
+  description: Installs Kubernetes tools
+  license: MIT
+  min_ansible_version: "6.0"
+  platforms:
+    - name: ArchLinux
+
+dependencies: []

@@ -5,6 +5,18 @@
     name: zsh
     state: present
 
+- name: Check if ~/.oh-my-zsh exists
+  ansible.builtin.stat:
+    path: "{{ ansible_env.HOME }}/.oh-my-zsh"
+  register: stat_oh_my_zsh_result
+
+- name: Cloning oh-my-zsh
+  ansible.builtin.git:
+    repo: https://github.com/ohmyzsh/ohmyzsh.git
+    dest: "{{ ansible_env.HOME }}/.oh-my-zsh"
+    update: no
+  when: not stat_oh_my_zsh_result.stat.exists
+
 - name: Ensure configuration is present
   ansible.builtin.template:
     src: zshrc.j2

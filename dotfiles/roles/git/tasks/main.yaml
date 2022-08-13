@@ -1,0 +1,13 @@
+---
+- name: Git - Ensure Git is installed
+  become: true
+  ansible.builtin.package:
+    name: git
+    state: present
+
+- name: Git - Ensure git configuration is present
+  ansible.builtin.copy:
+    src: .gitconfig
+    dest: "{{ ansible_user_dir }}/.gitconfig"
+    mode: '0644'
+    force: false

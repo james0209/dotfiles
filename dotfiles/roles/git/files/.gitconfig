@@ -1,0 +1,7 @@
+[user]
+    name = James Brookes
+    email = jpebrookes@gmail.com
+[init]
+    defaultBranch = main
+[core]
+    editor = nano

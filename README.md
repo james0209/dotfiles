@@ -7,6 +7,12 @@ framework for managing your zsh configuration.
 - [powerlevel10k] Powerlevel10k is a theme for Zsh. It emphasizes speed,
 flexibility and out-of-the-box experience.
 
+## Terminal Extensions
+- [bat] Replacement for cat
+- [exa] Replacement for ls
+- [nerdfont] Fonts for Powerlevel10k and exa
+- [fzf] Fuzzy searching
+
 ## Packages
 
 - bauh
@@ -30,7 +36,8 @@ flexibility and out-of-the-box experience.
 ### And much more
 
 [bat]: https://github.com/sharkdp/bat "Bat"
-[lsd]: https://github.com/Peltoche/lsd "lsd"
+[exa]: https://github.com/ogham/exa "exa"
+[nerdfont]: https://webinstall.dev/nerdfont/ "Nerd Font"
 [fzf]: https://github.com/junegunn/fzf "FZF"
 [ohmyzsh]: https://github.com/ohmyzsh/ohmyzsh "Oh My Zsh"
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k "Powerlevel10k"

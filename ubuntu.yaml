@@ -3,5 +3,5 @@
   hosts: local
 
   roles:
-    - dannixon.system.package_updates
     - jamesbrookes.dotfiles.zsh
+    - jamesbrookes.dotfiles.common

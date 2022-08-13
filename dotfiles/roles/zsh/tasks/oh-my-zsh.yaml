@@ -20,8 +20,8 @@
   ansible.builtin.copy:
     src: .zshrc
     dest: "{{ ansible_user_dir }}/.zshrc"
-    mode: "u=rw,g=,o="
-    when: not stat_zshrc_result.stat.exists
+    mode: '0644'
+    force: true
 
 # Plugins
 - name: ZSH - Install zsh syntax highlighting

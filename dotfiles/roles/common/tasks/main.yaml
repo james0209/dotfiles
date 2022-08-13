@@ -1,0 +1,12 @@
+---
+# Install common tools
+- name: Install common tools
+  become: true
+  ansible.builtin.package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - direnv
+    - exa
+    - bat
+    - fzf

@@ -7,6 +7,7 @@ fi
 
 zstyle :omz:plugins:ssh-agent identities id_ed25519
 
+export GOPATH=$HOME/go
 export PATH=$PATH:$HOME/.local/bin:$HOME/bin:/usr/local/go/bin
 
 # Path to your oh-my-zsh installation.
@@ -107,10 +108,10 @@ source $ZSH/oh-my-zsh.sh
 alias bat="batcat"
 alias cat="bat"
 
-alias ls='exa'
-alias l='exa'
-alias la='exa -a'
-alias lsa='exa -a'
+alias l="exa -l --icons"
+alias ls='exa -l --icons'
+alias la="exa -la --icons"
+alias lsa="exa -la --icons"
 alias lsd='exa -aD'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

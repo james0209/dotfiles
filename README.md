@@ -1,5 +1,9 @@
 # 📄Dotfiles
 
+## Example Deployment
+
+`ansible-playbook ubuntu.yaml -K`
+
 ## Useful Links
 
 - [ohmyzsh] Oh My Zsh is an open source, community-driven

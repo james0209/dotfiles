@@ -5,3 +5,4 @@
   roles:
     - jamesbrookes.dotfiles.zsh
     - jamesbrookes.dotfiles.common
+    - jamesbrookes.dotfiles.git

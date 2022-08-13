@@ -2,6 +2,7 @@
 
 ## Example Deployment
 
+`ansible-galaxy collection install dotfiles -p ./collections`
 `ansible-playbook ubuntu.yaml -K`
 
 ## Useful Links
@@ -12,6 +13,7 @@ framework for managing your zsh configuration.
 flexibility and out-of-the-box experience.
 
 ## Terminal Extensions
+
 - [bat] Replacement for cat
 - [exa] Replacement for ls
 - [nerdfont] Fonts for Powerlevel10k and exa

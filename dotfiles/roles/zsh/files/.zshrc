@@ -7,7 +7,7 @@ fi
 
 zstyle :omz:plugins:ssh-agent identities id_ed25519
 
-export GOPATH=$(go env GOPATH)
+export GOPATH=$HOME/go
 export PATH=$PATH:$HOME/.local/bin:$HOME/bin:/usr/local/go/bin:$GOPATH/bin
 
 # Path to your oh-my-zsh installation.

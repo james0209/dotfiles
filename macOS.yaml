@@ -14,6 +14,7 @@
       - tmux
       - watch
       - python@3.10
+      - go@1.19
       - kubectl
       - helm
       - terraform
@@ -33,6 +34,15 @@
       - spotify
       - keepingyouawake
       - docker
+      - font-hack-nerd-font
+      - bitwarden
+      - authy
+      - shottr
+
+    homebrew_taps:
+      - homebrew/core
+      - homebrew/cask-fonts
+      - hashicorp/tap
 
   roles:
     - role: geerlingguy.mac.homebrew

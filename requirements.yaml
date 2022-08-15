@@ -1,6 +1,8 @@
 ---
 roles:
-  - src: geerlingguy.docker
+  - name: geerlingguy.docker
+  - name: elliotweiser.osx-command-line-tools
 
 collections:
+  - name: geerlingguy.mac
   - ./dotfiles

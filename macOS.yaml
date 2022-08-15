@@ -1,0 +1,48 @@
+---
+- name: Setup macOS (Work Laptop)
+  hosts: local
+
+  vars:
+    homebrew_installed_packages:
+      - node
+      - nvm
+      - redis
+      - ssh-copy-id
+      - pv
+      - wget
+      - htop
+      - tmux
+      - watch
+      - python@3.10
+      - go@1.19
+      - kubectl
+      - helm
+      - terraform
+
+    homebrew_cask_apps:
+      - iterm2
+      - alfred
+      - rectangle
+      - alt-tab
+      - keka
+      - firefox
+      - google-chrome
+      - visual-studio-code
+      - discord
+      - slack
+      - vlc
+      - spotify
+      - keepingyouawake
+      - docker
+      - font-hack-nerd-font
+      - bitwarden
+      - authy
+      - shottr
+
+    homebrew_taps:
+      - homebrew/core
+      - homebrew/cask-fonts
+      - hashicorp/tap
+
+  roles:
+    - role: geerlingguy.mac.homebrew

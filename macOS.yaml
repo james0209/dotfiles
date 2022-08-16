@@ -4,10 +4,6 @@
 
   vars:
     homebrew_installed_packages:
-      - coreutils
-      - node
-      - nvm
-      - redis
       - ssh-copy-id
       - pv
       - wget
@@ -39,7 +35,7 @@
       - bitwarden
       - authy
       - shottr
-      - transmit
+      - google-drive
       - mambaforge
 
     homebrew_taps:

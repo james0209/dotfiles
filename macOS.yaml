@@ -5,6 +5,7 @@
   vars:
     homebrew_installed_packages:
       - ssh-copy-id
+      - git
       - pv
       - wget
       - htop

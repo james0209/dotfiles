@@ -4,6 +4,7 @@
 
   vars:
     homebrew_installed_packages:
+      - coreutils
       - node
       - nvm
       - redis
@@ -13,11 +14,11 @@
       - htop
       - tmux
       - watch
-      - python@3.10
+      - cowsay
+      - openjdk
       - go@1.19
       - kubectl
       - helm
-      - terraform
 
     homebrew_cask_apps:
       - iterm2
@@ -38,6 +39,8 @@
       - bitwarden
       - authy
       - shottr
+      - transmit
+      - mambaforge
 
     homebrew_taps:
       - homebrew/core

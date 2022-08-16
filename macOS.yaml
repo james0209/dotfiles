@@ -21,7 +21,7 @@
 
     homebrew_cask_apps:
       - iterm2
-      - alfred
+      - raycast
       - rectangle
       - alt-tab
       - keka

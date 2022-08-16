@@ -19,7 +19,7 @@
 
     homebrew_cask_apps:
       - iterm2
-      - raycast
+      - raycast # Use 'window management plugin'
       - rectangle
       - alt-tab
       - keka
@@ -29,7 +29,7 @@
       - discord
       - slack
       - zoom
-      - vlc
+      - iina
       - spotify
       - keepingyouawake
       - visual-studio-code

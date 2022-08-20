@@ -4,6 +4,7 @@
 
   vars:
     homebrew_installed_packages:
+      - coreutils
       - ssh-copy-id
       - git
       - pv

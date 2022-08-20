@@ -19,22 +19,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Get pip cache dir
-        id: pip-cache
-        run: |
-          echo "::set-output name=dir::$(pip cache dir)"
-
-      - uses: actions/cache@v3
-        id: cache
+      - uses: actions/setup-python@v4
         with:
-          path: ${{ steps.pip-cache.outputs.dir }}
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-
-      - name: Install test dependencies.
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: pip3 install ansible
+          python-version: '3.10'
+          cache: 'pip'
+      - run: pip install ansible
 
       - name: Set up the test environment.
         run: |

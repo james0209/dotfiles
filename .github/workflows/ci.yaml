@@ -27,12 +27,11 @@ jobs:
             ${{ runner.os }}-pip-
 
       - name: Install test dependencies.
-        run: sudo pip3 install ansible
+        run: pip3 install ansible
 
       - name: Set up the test environment.
         run: |
           cp tests/ansible.cfg ./ansible.cfg
-          cp tests/inventory ./inventory
           ansible-galaxy install -r requirements.yml
 
       - name: Test the playbook's syntax.

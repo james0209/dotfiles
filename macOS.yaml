@@ -12,6 +12,7 @@
       - tmux
       - watch
       - cowsay
+      - asdf
       - openjdk
       - go@1.19
       - kubectl

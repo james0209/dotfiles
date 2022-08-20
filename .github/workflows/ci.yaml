@@ -19,14 +19,21 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Get pip cache dir
+        id: pip-cache
+        run: |
+          echo "::set-output name=dir::$(pip cache dir)"
+
       - uses: actions/cache@v3
+        id: cache
         with:
-          path: ~/Library/Caches/pip
+          path: ${{ steps.pip-cache.outputs.dir }}
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
 
       - name: Install test dependencies.
+        if: steps.cache.outputs.cache-hit != 'true'
         run: pip3 install ansible
 
       - name: Set up the test environment.
@@ -35,9 +42,9 @@ jobs:
           ansible-galaxy install -r requirements.yaml
 
       - name: Test the playbook's syntax.
-        run: ansible-playbook macOS.yml --syntax-check
+        run: ansible-playbook macOS.yaml --syntax-check
 
       - name: Test the playbook.
-        run: ansible-playbook macOS.yml
+        run: ansible-playbook macOS.yaml
         env:
           ANSIBLE_FORCE_COLOR: '1'

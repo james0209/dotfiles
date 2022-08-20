@@ -2,12 +2,14 @@
 # Install zsh
 - name: ZSH - Ensure Zsh is installed
   become: true
+  when: ansible_os_family == 'Debian'
   ansible.builtin.package:
     name: zsh
     state: present
 
 - name: ZSH - Ensure Zsh is set as the user's logon shell
   become: true
+  when: ansible_os_family == 'Debian'
   ansible.builtin.user:
     name: "{{ ansible_user_id }}"
     shell: /bin/zsh

@@ -1,0 +1,20 @@
+---
+- name: asdf - Install Golang plugin
+  register: asdf_add_golang
+  changed_when: '"already added" not in asdf_add_golang.stderr'
+  failed_when:
+    - asdf_add_golang.rc != 0
+    - '"already added" not in asdf_add_golang.stderr'
+  ansible.builtin.command: 'asdf plugin add golang'
+
+- name: asdf - Install latest Go version
+  register: asdf_golang_installed
+  changed_when: '"already added" not in asdf_golang_installed.stdout'
+  failed_when:
+    - asdf_golang_installed.rc != 0
+    - '"already added" not in asdf_golang_installed.stderr'
+  ansible.builtin.command: 'asdf install golang latest'
+
+- name: asdf - Set global Go version to latest
+  changed_when: true
+  ansible.builtin.command: 'asdf global golang latest'

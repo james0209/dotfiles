@@ -1,15 +1,43 @@
 ---
-name: Code quality
+name: CI
 
 on:
   push:
 
 jobs:
-  lint-ansible:
-    name: Ansible Lint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+  integration:
+    name: Integration
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - macos-12
 
-      - name: Set up Ansible
-        uses: ansible-community/ansible-lint-action@main
+    steps:
+      - name: Check out the codebase.
+        uses: actions/checkout@v3
+
+      - name: Uninstall GitHub Actions' built-in Homebrew.
+        run: tests/uninstall-homebrew.sh
+
+      - name: Uninstall GitHub Actions' built-in browser installs.
+        run: |
+          sudo rm -rf /Applications/Firefox.app
+          sudo rm -rf /Applications/Google\ Chrome.app
+
+      - name: Install test dependencies.
+        run: sudo pip3 install ansible
+
+      - name: Set up the test environment.
+        run: |
+          cp tests/ansible.cfg ./ansible.cfg
+          cp tests/inventory ./inventory
+          ansible-galaxy install -r requirements.yml
+
+      - name: Test the playbook's syntax.
+        run: ansible-playbook macOS.yml --syntax-check
+
+      - name: Test the playbook.
+        run: ansible-playbook macOS.yml
+        env:
+          ANSIBLE_FORCE_COLOR: '1'

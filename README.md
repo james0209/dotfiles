@@ -3,6 +3,7 @@
 ## Example Deployment
 
 `ansible-galaxy collection install dotfiles -p ./collections`
+
 `ansible-playbook ubuntu.yaml -K`
 
 ## Useful Links
@@ -19,12 +20,17 @@ flexibility and out-of-the-box experience.
 - [nerdfont] Fonts for Powerlevel10k and exa
 - [fzf] Fuzzy searching
 
-## Packages
+## Linux Packages
 
 - bauh
 - qemu
 - timeshift
 - ulauncher
+
+## Mac Packages
+
+- [dropover]
+- [swish]
 
 ## Addons/Extensions
 
@@ -47,3 +53,5 @@ flexibility and out-of-the-box experience.
 [fzf]: https://github.com/junegunn/fzf "FZF"
 [ohmyzsh]: https://github.com/ohmyzsh/ohmyzsh "Oh My Zsh"
 [powerlevel10k]: https://github.com/romkatv/powerlevel10k "Powerlevel10k"
+[dropover]: https://dropoverapp.com/ "Dropover"
+[swish]: https://highlyopinionated.co/swish/ "Swish"

@@ -5,6 +5,7 @@
   vars:
     homebrew_installed_packages:
       - coreutils
+      - zsh
       - ssh-copy-id
       - git
       - pv
@@ -40,7 +41,6 @@
       - bitwarden
       - authy
       - google-drive
-      - mambaforge
 
     homebrew_taps:
       - homebrew/core
@@ -48,4 +48,7 @@
       - hashicorp/tap
 
   roles:
+    - role: elliotweiser.osx-command-line-tools
     - role: geerlingguy.mac.homebrew
+    - role: jamesbrookes.dotfiles.zsh
+    - role: jamesbrookes.dotfiles.asdf

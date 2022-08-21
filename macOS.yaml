@@ -6,6 +6,7 @@
     homebrew_installed_packages:
       - coreutils
       - zsh
+      - starship
       - ssh-copy-id
       - git
       - pv
@@ -15,6 +16,10 @@
       - watch
       - cowsay
       - tldr
+      - direnv
+      - exa
+      - bat
+      - fzf
       - asdf
       - kubectl
       - helm

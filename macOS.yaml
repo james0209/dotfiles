@@ -14,8 +14,8 @@
       - tmux
       - watch
       - cowsay
+      - tldr
       - asdf
-      - openjdk
       - kubectl
       - helm
 

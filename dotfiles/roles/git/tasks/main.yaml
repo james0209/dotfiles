@@ -1,6 +1,7 @@
 ---
 - name: Git - Ensure Git is installed
   become: true
+  when: ansible_os_family == 'Debian'
   ansible.builtin.package:
     name: git
     state: present
@@ -9,5 +10,5 @@
   ansible.builtin.copy:
     src: .gitconfig
     dest: "{{ ansible_user_dir }}/.gitconfig"
-    mode: '0644'
+    mode: "0644"
     force: false

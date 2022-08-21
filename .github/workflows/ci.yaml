@@ -1,15 +1,39 @@
 ---
-name: Code quality
+name: CI
 
 on:
   push:
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
 jobs:
-  lint-ansible:
-    name: Ansible Lint
-    runs-on: ubuntu-latest
+  integration:
+    name: Integration
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - macos-12
+
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up Ansible
-        uses: ansible-community/ansible-lint-action@main
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+
+      - name: Set up the test environment.
+        run: |
+          cp tests/ansible.cfg ./ansible.cfg
+          ansible-galaxy install -r requirements.yaml
+
+      - name: Test the playbook's syntax.
+        run: ansible-playbook macOS.yaml --syntax-check
+
+      - name: Test the playbook.
+        run: ansible-playbook macOS.yaml
+        env:
+          ANSIBLE_FORCE_COLOR: '1'

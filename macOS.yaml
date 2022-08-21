@@ -6,6 +6,7 @@
     homebrew_installed_packages:
       - coreutils
       - zsh
+      - starship
       - ssh-copy-id
       - git
       - pv
@@ -14,8 +15,13 @@
       - tmux
       - watch
       - cowsay
+      - tldr
+      - direnv
+      - exa
+      - bat
+      - fzf
+      - nano
       - asdf
-      - openjdk
       - kubectl
       - helm
 
@@ -36,6 +42,7 @@
       - keepingyouawake
       - visual-studio-code
       - docker
+      - font-fira-code-nerd-font
       - font-anonymice-nerd-font
       - insomnia
       - bitwarden
@@ -52,3 +59,4 @@
     - role: geerlingguy.mac.homebrew
     - role: jamesbrookes.dotfiles.zsh
     - role: jamesbrookes.dotfiles.asdf
+    - role: jamesbrookes.dotfiles.git

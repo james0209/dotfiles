@@ -14,5 +14,8 @@
     name: "{{ ansible_user_id }}"
     shell: /bin/zsh
 
-- import_tasks: tasks/oh-my-zsh.yaml
-- import_tasks: tasks/powerlevel10k.yaml
+- ansible.builtin.import_tasks: tasks/oh-my-zsh.yaml
+
+- name: Setup powerlevel10k on Ubuntu
+  ansible.builtin.import_tasks: tasks/powerlevel10k.yaml
+  when: ansible_os_family == 'Debian'
